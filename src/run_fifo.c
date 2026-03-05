@@ -45,7 +45,6 @@ static int	get_right_dongle(t_coder *coder)
 		return (1);
 	}
 	pthread_mutex_lock(&coder->rd->take_lock);
-	write_log(coder, "has taken a dongle");
 	pthread_mutex_lock(&coder->rd->queue_lock);
 	coder->rd->first_in_queue = NULL;
 	pthread_mutex_unlock(&coder->rd->queue_lock);
@@ -72,7 +71,6 @@ static int	get_left_dongle(t_coder *coder)
 		return (1);
 	}
 	pthread_mutex_lock(&coder->ld->take_lock);
-	write_log(coder, "has taken a dongle");
 	pthread_mutex_lock(&coder->ld->queue_lock);
 	coder->ld->first_in_queue = NULL;
 	pthread_mutex_unlock(&coder->ld->queue_lock);

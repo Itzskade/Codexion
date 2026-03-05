@@ -70,7 +70,6 @@ static int	get_right_dongle(t_coder *coder)
 		usleep(500);
 	}
 	pthread_mutex_lock(&coder->rd->take_lock);
-	write_log(coder, "has taken a dongle");
 	exit_queue(coder, coder->rd);
 	return (0);
 }
@@ -98,7 +97,6 @@ static int	get_left_dongle(t_coder *coder)
 		usleep(500);
 	}
 	pthread_mutex_lock(&coder->ld->take_lock);
-	write_log(coder, "has taken a dongle");
 	exit_queue(coder, coder->ld);
 	return (0);
 }

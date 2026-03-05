@@ -36,6 +36,8 @@ static int	compile_routine(t_coder *coder)
 		err = run_edf(coder);
 	if (err)
 		return (1);
+	write_log(coder, "has taken a dongle");
+	write_log(coder, "has taken a dongle");
 	write_log(coder, "is compiling");
 	pthread_mutex_lock(&coder->compile_lock);
 	coder->last_compile = get_time_in_ms();
